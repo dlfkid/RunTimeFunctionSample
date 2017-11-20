@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>pic_urls</key>
+	<array>
+		<dict>
+			<key>thumbnail_pic</key>
+			<string>http://www.go_fuck_your_self.com</string>
+		</dict>
+	</array>
+	<key>user</key>
+	<dict>
+		<key>name</key>
+		<string>TomClancy</string>
+		<key>age</key>
+		<string>22</string>
+		<key>hobby</key>
+		<string>novels</string>
+		<key>healthCondition</key>
+		<string>dead</string>
+	</dict>
+	<key>repostsCount</key>
+	<integer>87</integer>
+	<key>text</key>
+	<string>这条只是测试文本</string>
+</dict>
+</plist>
