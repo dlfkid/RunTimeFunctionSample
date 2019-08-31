@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4A7C4CA231A807B00DE9A9D /* NSObject+MessageSend.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A7C4C9231A807B00DE9A9D /* NSObject+MessageSend.m */; };
+		B4A7C4CD231A963900DE9A9D /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A7C4CC231A963900DE9A9D /* NSObject+Runtime.m */; };
 		B4ABAAF41FBEC6C600D2043F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4ABAAF31FBEC6C600D2043F /* AppDelegate.m */; };
 		B4ABAAFD1FBEC6C600D2043F /* RunTimeTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4ABAAFB1FBEC6C600D2043F /* RunTimeTest.xcdatamodeld */; };
 		B4ABAAFF1FBEC6C600D2043F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4ABAAFE1FBEC6C600D2043F /* Assets.xcassets */; };
@@ -22,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4A7C4C8231A807B00DE9A9D /* NSObject+MessageSend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MessageSend.h"; sourceTree = "<group>"; };
+		B4A7C4C9231A807B00DE9A9D /* NSObject+MessageSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MessageSend.m"; sourceTree = "<group>"; };
+		B4A7C4CB231A963900DE9A9D /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
+		B4A7C4CC231A963900DE9A9D /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Runtime.m"; sourceTree = "<group>"; };
 		B4ABAAEF1FBEC6C600D2043F /* RunTimeTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunTimeTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4ABAAF21FBEC6C600D2043F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B4ABAAF31FBEC6C600D2043F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -80,6 +86,10 @@
 				B4ABAB111FBECB2E00D2043F /* UIImage+ImageNamedExpand.m */,
 				B4ABAB161FBED76000D2043F /* NSObject+PropertyExpand.h */,
 				B4ABAB171FBED76000D2043F /* NSObject+PropertyExpand.m */,
+				B4A7C4C8231A807B00DE9A9D /* NSObject+MessageSend.h */,
+				B4A7C4C9231A807B00DE9A9D /* NSObject+MessageSend.m */,
+				B4A7C4CB231A963900DE9A9D /* NSObject+Runtime.h */,
+				B4A7C4CC231A963900DE9A9D /* NSObject+Runtime.m */,
 				B4ABAB1E1FC024E900D2043F /* Movie.h */,
 				B4ABAB1F1FC024E900D2043F /* Movie.m */,
 				B4ABAB0B1FBEC71E00D2043F /* MainViewController.h */,
@@ -123,7 +133,7 @@
 		B4ABAAE71FBEC6C600D2043F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = Ivan_deng;
 				TargetAttributes = {
 					B4ABAAEE1FBEC6C600D2043F = {
@@ -171,9 +181,11 @@
 			files = (
 				B4ABAB131FBECB2E00D2043F /* UIImage+ImageNamedExpand.m in Sources */,
 				B4ABAAF41FBEC6C600D2043F /* AppDelegate.m in Sources */,
+				B4A7C4CA231A807B00DE9A9D /* NSObject+MessageSend.m in Sources */,
 				B4ABAB201FC024E900D2043F /* Movie.m in Sources */,
 				B4ABAB1D1FBEE47F00D2043F /* Person.m in Sources */,
 				B4ABAB181FBED76000D2043F /* NSObject+PropertyExpand.m in Sources */,
+				B4A7C4CD231A963900DE9A9D /* NSObject+Runtime.m in Sources */,
 				B4ABAB051FBEC6C600D2043F /* main.m in Sources */,
 				B4ABAAFD1FBEC6C600D2043F /* RunTimeTest.xcdatamodeld in Sources */,
 				B4ABAB0D1FBEC71E00D2043F /* MainViewController.m in Sources */,
@@ -208,6 +220,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -215,6 +228,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -263,6 +277,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -270,6 +285,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
