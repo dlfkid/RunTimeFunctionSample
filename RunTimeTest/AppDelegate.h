@@ -15,7 +15,11 @@
 
 @property (readonly, strong) NSPersistentContainer *persistentContainer;
 
+@property (nonatomic, strong) UIViewController *currentViewController;
+
 - (void)saveContext;
+
++ (instancetype)sharedInstance;
 
 
 @end

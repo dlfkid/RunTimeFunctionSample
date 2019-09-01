@@ -13,10 +13,16 @@
 
 @end
 
+static AppDelegate * _sharedInstance;
+
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = self;
+    });
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     MainViewController *main = [[MainViewController alloc]init];
@@ -100,6 +106,11 @@
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
+}
+
++ (instancetype)sharedInstance {
+    AppDelegate *delegation = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    return delegation;
 }
 
 @end
