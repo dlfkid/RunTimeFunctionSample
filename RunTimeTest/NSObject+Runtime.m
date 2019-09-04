@@ -24,34 +24,31 @@
     return NO;
 }
 
-- (void)exchangeInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
+- (void)swizzleInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
     Method originMethod = class_getInstanceMethod(self.class, selector1);
     Method newMethod = class_getInstanceMethod(self.class, selector2);
-    method_exchangeImplementations(originMethod, newMethod);
+    if(class_addMethod(self.class, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+        class_replaceMethod(self.class, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
+    else
+        method_exchangeImplementations(originMethod, newMethod);
 }
 
-+ (void)exchangeInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
++ (void)swizzleInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
     Method originMethod = class_getInstanceMethod(self, selector1);
     Method newMethod = class_getInstanceMethod(self, selector2);
-    method_exchangeImplementations(originMethod, newMethod);
+    if(class_addMethod(self, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+        class_replaceMethod(self, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
+    else
+        method_exchangeImplementations(originMethod, newMethod);
 }
 
-+ (void)exchangeClassMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
++ (void)swizzleClassMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
     Method originMethod = class_getClassMethod(self, selector1);
     Method newMethod = class_getClassMethod(self, selector2);
-    method_exchangeImplementations(originMethod, newMethod);
-}
-
-+ (BOOL)addInstanceMethod:(SEL)selector {
-    Method method = class_getInstanceMethod(self, selector);
-    IMP implementation = class_getMethodImplementation(self, selector);
-    return class_addMethod(self, selector, implementation, method_getTypeEncoding(method));
-}
-
-+ (BOOL)addClassMethod:(SEL)selector {
-    Method method = class_getClassMethod(self, selector);
-    IMP implementation = class_getMethodImplementation(self, selector);
-    return class_addMethod(self, selector, implementation, method_getTypeEncoding(method));
+    if(class_addMethod(self, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+        class_replaceMethod(self, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
+    else
+        method_exchangeImplementations(originMethod, newMethod);
 }
 
 + (NSArray <NSString *> *)methodNames {

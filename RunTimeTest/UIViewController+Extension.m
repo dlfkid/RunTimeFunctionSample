@@ -13,7 +13,7 @@
 @implementation UIViewController (Extension)
 
 + (void)load {
-    [self exchangeMethodWithSelector:@selector(extension_viewDidAppear:) AndSelector:@selector(viewDidAppear:)];
+    [self swizzleInstanceMethodWithSelector:@selector(viewDidAppear:) AndSelector:@selector(extension_viewDidAppear:)]
 }
 
 - (void)extension_viewDidAppear:(BOOL)animated {
