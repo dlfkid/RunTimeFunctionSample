@@ -26,7 +26,15 @@ NS_ASSUME_NONNULL_BEGIN
  @param selector1 方法1
  @param selector2 方法2
  */
-- (void)exchangeMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2;
+- (void)exchangeInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2;
+
+/**
+ 交换类中的某两个实例方法
+ 
+ @param selector1 方法1
+ @param selector2 方法2
+ */
++ (void)exchangeInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2;
 
 /**
  交换类中的某两个类方法
@@ -34,7 +42,23 @@ NS_ASSUME_NONNULL_BEGIN
  @param selector1 方法1
  @param selector2 方法2
  */
-+ (void)exchangeMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2;
++ (void)exchangeClassMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2;
+
+/**
+ 添加实例方法到类
+ 
+ @param selector 方法SEL指针
+ @return 成功与否
+ */
++ (BOOL)addInstanceMethod:(SEL)selector;
+
+/**
+ 添加类方法到类
+ 
+ @param selector 方法SEL指针
+ @return 成功与否
+ */
++ (BOOL)addClassMethod:(SEL)selector;
 
 /**
  获得当前类的所有方法名

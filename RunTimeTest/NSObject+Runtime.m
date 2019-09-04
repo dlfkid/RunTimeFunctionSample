@@ -24,16 +24,34 @@
     return NO;
 }
 
-- (void)exchangeMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
+- (void)exchangeInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
     Method originMethod = class_getInstanceMethod(self.class, selector1);
     Method newMethod = class_getInstanceMethod(self.class, selector2);
     method_exchangeImplementations(originMethod, newMethod);
 }
 
-+ (void)exchangeMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
++ (void)exchangeInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
+    Method originMethod = class_getInstanceMethod(self, selector1);
+    Method newMethod = class_getInstanceMethod(self, selector2);
+    method_exchangeImplementations(originMethod, newMethod);
+}
+
++ (void)exchangeClassMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
     Method originMethod = class_getClassMethod(self, selector1);
     Method newMethod = class_getClassMethod(self, selector2);
     method_exchangeImplementations(originMethod, newMethod);
+}
+
++ (BOOL)addInstanceMethod:(SEL)selector {
+    Method method = class_getInstanceMethod(self, selector);
+    IMP implementation = class_getMethodImplementation(self, selector);
+    return class_addMethod(self, selector, implementation, method_getTypeEncoding(method));
+}
+
++ (BOOL)addClassMethod:(SEL)selector {
+    Method method = class_getClassMethod(self, selector);
+    IMP implementation = class_getMethodImplementation(self, selector);
+    return class_addMethod(self, selector, implementation, method_getTypeEncoding(method));
 }
 
 + (NSArray <NSString *> *)methodNames {
