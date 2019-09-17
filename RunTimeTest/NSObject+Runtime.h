@@ -10,7 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void(^DeallocHandlerBlock)(NSObject *object);
+
 @interface NSObject (Runtime)
+
+@property (nonatomic, copy) DeallocHandlerBlock deallocHandler;
 
 /**
  判断当前类有没有包含某方法
@@ -50,6 +54,16 @@ NS_ASSUME_NONNULL_BEGIN
  @return 方法名数组
  */
 + (NSArray <NSString *> *)methodNames;
+
+/**
+ 打印类的所有属性
+ */
++ (void)logPropertys;
+
+/**
+ 打印类的所有成员变量
+ */
++ (void)logIvars;
 
 @end
 
