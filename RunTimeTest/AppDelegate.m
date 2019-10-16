@@ -30,6 +30,7 @@ static AppDelegate * _sharedInstance;
     [self.window setRootViewController:nav];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     // Override point for customization after application launch.
+    
     return YES;
 }
 

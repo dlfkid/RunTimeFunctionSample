@@ -42,28 +42,28 @@
 - (void)swizzleInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
     Method originMethod = class_getInstanceMethod(self.class, selector1);
     Method newMethod = class_getInstanceMethod(self.class, selector2);
-    if(class_addMethod(self.class, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
-        class_replaceMethod(self.class, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
-    else
+//    if(class_addMethod(self.class, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+//        class_replaceMethod(self.class, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
+//    else
         method_exchangeImplementations(originMethod, newMethod);
 }
 
 + (void)swizzleInstanceMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
     Method originMethod = class_getInstanceMethod(self, selector1);
     Method newMethod = class_getInstanceMethod(self, selector2);
-    if(class_addMethod(self, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
-        class_replaceMethod(self, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
-    else
-        method_exchangeImplementations(originMethod, newMethod);
+//    if(class_addMethod(self, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+//        class_replaceMethod(self, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
+//    else
+      method_exchangeImplementations(originMethod, newMethod);
 }
 
 + (void)swizzleClassMethodWithSelector:(SEL)selector1 AndSelector:(SEL)selector2 {
     Method originMethod = class_getClassMethod(self, selector1);
     Method newMethod = class_getClassMethod(self, selector2);
-    if(class_addMethod(self, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
-        class_replaceMethod(self, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
-    else
-        method_exchangeImplementations(originMethod, newMethod);
+    //    if(class_addMethod(self, selector1, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
+    //        class_replaceMethod(self, selector2, method_getImplementation(originMethod), method_getTypeEncoding(originMethod));
+    //    else
+    method_exchangeImplementations(originMethod, newMethod);
 }
 
 + (NSArray <NSString *> *)methodNames {

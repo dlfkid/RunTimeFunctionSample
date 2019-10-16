@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35246CC72356C4CB00EF7201 /* NSArray+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 35246CC62356C4CB00EF7201 /* NSArray+Hook.m */; };
 		B4A7C4CA231A807B00DE9A9D /* NSObject+MessageSend.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A7C4C9231A807B00DE9A9D /* NSObject+MessageSend.m */; };
 		B4A7C4CD231A963900DE9A9D /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A7C4CC231A963900DE9A9D /* NSObject+Runtime.m */; };
 		B4A7C4D0231BE7DC00DE9A9D /* UIViewController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B4A7C4CF231BE7DC00DE9A9D /* UIViewController+Extension.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		35246CC52356C4CB00EF7201 /* NSArray+Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Hook.h"; sourceTree = "<group>"; };
+		35246CC62356C4CB00EF7201 /* NSArray+Hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Hook.m"; sourceTree = "<group>"; };
 		B4A7C4C8231A807B00DE9A9D /* NSObject+MessageSend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+MessageSend.h"; sourceTree = "<group>"; };
 		B4A7C4C9231A807B00DE9A9D /* NSObject+MessageSend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MessageSend.m"; sourceTree = "<group>"; };
 		B4A7C4CB231A963900DE9A9D /* NSObject+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Runtime.h"; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				B4A7C4C9231A807B00DE9A9D /* NSObject+MessageSend.m */,
 				B4A7C4CB231A963900DE9A9D /* NSObject+Runtime.h */,
 				B4A7C4CC231A963900DE9A9D /* NSObject+Runtime.m */,
+				35246CC52356C4CB00EF7201 /* NSArray+Hook.h */,
+				35246CC62356C4CB00EF7201 /* NSArray+Hook.m */,
 				B4ABAB1E1FC024E900D2043F /* Movie.h */,
 				B4ABAB1F1FC024E900D2043F /* Movie.m */,
 				B4ABAB0B1FBEC71E00D2043F /* MainViewController.h */,
@@ -185,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4ABAB131FBECB2E00D2043F /* UIImage+ImageNamedExpand.m in Sources */,
+				35246CC72356C4CB00EF7201 /* NSArray+Hook.m in Sources */,
 				B4ABAAF41FBEC6C600D2043F /* AppDelegate.m in Sources */,
 				B4A7C4CA231A807B00DE9A9D /* NSObject+MessageSend.m in Sources */,
 				B4A7C4D0231BE7DC00DE9A9D /* UIViewController+Extension.m in Sources */,

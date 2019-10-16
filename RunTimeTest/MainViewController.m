@@ -7,7 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "UIImage+ImageNamedExpand.h"
 #import "NSObject+PropertyExpand.h"
 #import "Person.h"
 @interface MainViewController ()
@@ -32,6 +31,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.navigationItem.title = @"RunTime Test";
+    NSArray *asshole = @[@"mother", @"cuck", @"sucker", @"ass"];
+    
+    NSLog(@"String: %@", asshole[10]);
+    
+    NSLog(@"String: %@", [asshole objectAtIndex:10]);
 }
 
 - (void)didReceiveMemoryWarning {
